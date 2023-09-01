@@ -1,0 +1,21 @@
+void reverse(string&str,int i){
+    //base case                        
+    if(i>str.length()-i-1){      // we have repalced j with n-i-1
+        return ;
+    }
+    swap(str[i],str[str.length()-i-1]);
+    i++;
+    
+    //recursive call
+    reverse(str,i);
+}
+
+
+int main() {
+    string str="abcdef";
+    reverse(str,0);
+    cout<<str;
+   
+
+    return 0;
+}
