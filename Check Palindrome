@@ -1,0 +1,30 @@
+bool palindrome(string&str,int i,int j){
+    //base case                        
+    if(i>j){      // we have repalced j with n-i-1
+        return true ;
+    }
+    if(str[i]!=str[j]){
+        return false;
+    }
+    else{
+        palindrome(str,i+1,j-1);
+    }
+    
+    
+}
+
+
+int main() {
+    string str="abba";
+    
+    int ans=palindrome(str,0,str.length()-1);
+    if(ans){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+   
+
+    return 0;
+}
