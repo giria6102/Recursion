@@ -1,0 +1,24 @@
+void sort(int*arr,int n){
+    //base case
+    if(n==0||n==1){
+        return;
+    }
+    int minindex;
+    for(int i=0;i<n-1;i++){
+        minindex=i;
+        if(arr[i+1]<arr[i]){
+            minindex=i+1;
+        }
+        swap(arr[minindex],arr[i]);
+    }
+    sort(arr,n-1);
+    
+}
+
+int main() {
+    int arr[9]={9,8,7,6,5,4,3,2,1};
+    int n=9;
+    sort(arr,9);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
